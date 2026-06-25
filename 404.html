@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Enlace no encontrado | jondumen</title>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAA3e74AMvMLgDLyzEA3uz+AMLCSwDPyzEAystCAODv/gDHwksA4fHwANrj/wDNzTQA6OjoAJcT3wDSzikAxsc1ANzp/wCRE88A46aqAMvLMgDHxEYA3uz/AMvKNQDMyjUAx8g7AODv/wCZmP8Azcg7AMvNLQCWBPoAxsszAJkE+gDPzS0AzcgzAK617wDLyzMAzMszALvGQgDDwEIAys02ALG0RADJzDEA9PvNALfBUQDd7f4A6/TyAMfESACyt+IA/Pz8AM+qcADPxzcA2eT/AO3t7QDg8P4Ay84sAM7b+ADFwkYAub1dALO46AD6+voA8vvOAK227gCYAP8AwcBMANvt/wCutu4AoqjcAO/5zADg8P8A3vH0APj4+AChH9EAy88qAPb41wD2/t8ArrHkAOGnqwC7vO4A1KqCAMLL7QC5uVkA3ur4AKu16gDY7PsAycsuAKOn2ADi8PgA4/D4AKAC+wDj8vsApKPkANrs/ACVAvwA0+7/AMnY8wD5/sgAlgH/ANbx/wDCyUYA2+7/AOz28ADg7/wA0ad8AN/u/wD1/84A4O7/AOHu/wDi7v8Ayso7APT6swDUzSoAlgL9AMjKMwDi8fcA3e/9AM6pbwDDwU0A3eFuAMjIOQDHwkoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGNBGhoaUxsbIxoaGlwmK1FlGhoaGj4bG0IaGhoaLjolTgEaGhpoZGQIGhpGMGYYFUNfBBoaGhoaGhoaODs0JyxWTBEaGhoaGhoaGgtbUHUFLQAAGhoaGm5FGhoAABYJLwANDQAaGkpVaxoANQ0AOXgARzwAGgohcTYaADE8AG8ZbAAAGhopAyJqGhoAAA9vA0saGhpaBgMMcxoachQDAx0UWBoaPQMDKlcaXm0DAx1NAxBiGkADAwNpGmADAwMTIDMDB1QoAwMDd1I3AwMXHlkOAgMcJQMDAwN2AwMCEl0yP2cDAwMDAwMDAwMDTz90HUhhJAMDAwMDAwMDH3BISQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Pequeños ajustes específicos para la página de error */
+        .error-code {
+            font-size: 5rem;
+            font-weight: 700;
+            color: rgba(100, 255, 218, 0.9);
+            text-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
+            margin-bottom: 10px;
+            font-family: monospace;
+        }
+        .error-message {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 35px;
+        }
+        
+        /* Centrado perfecto con soporte para Scroll */
+        body {
+            display: grid !important;
+            justify-content: center !important; 
+            align-content: center !important;   
+            min-height: 100vh;
+            margin: 0 !important;
+            padding: 40px 20px !important;       
+            box-sizing: border-box;
+            background: radial-gradient(circle at center, #112229 0%, #070a13 70%) !important;
+            overflow-y: auto !important;         
+        }
+
+        .container {
+            margin: 0 auto !important; 
+            width: 100%;
+            max-width: 460px;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="container fade-in">
+        
+        <header class="profile">
+            <img src="docs/Miku-LT.jpg" alt="jondumen" class="profile-img">
+            <div class="error-code">404</div>
+            <h1>Enlace no disponible</h1>
+            <p class="error-message">El link que buscas no existe o fue removido temporalmente.</p>
+        </header>
+
+        <main class="links-container">
+            <a href="index.html" class="link-btn proyecto-destacado" style="justify-content: center; gap: 10px; width: 100%;">
+                <i class="fa-solid fa-house"></i> Volver al Inicio
+            </a>
+        </main>
+
+    </div> <script src="js/script.js"></script>
+</body>
+</html>

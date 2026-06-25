@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jondumen | Programming & Hardware</title>
+    <link type="image/png" sizes="96x96" rel="icon" href="docs/favicon.png">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="neon-canvas"></canvas>
+
+    <div class="container fade-in">
+        <header class="profile">
+            <img src="docs/Miku-LT.jpg" alt="jondumen" class="profile-img">
+            <h1>Jon (jondumen)</h1> 
+            <p class="tagline">Full Stack Developer | Hardware & PC Enthusiast</p>
+        </header>
+
+        <main class="links-container">
+            <!-- Botón que ahora abrirá el Pop-Up -->
+            <button id="open-cv-modal" class="link-btn">
+                Descargar / Ver CV <i class="fa-solid fa-file-pdf"></i>
+            </button>
+
+            <a href="https://github.com/jondumen" target="_blank" class="link-btn">
+                GitHub <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/jondumen" target="_blank" class="link-btn">
+                LinkedIn <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <button id="discord-btn" class="link-btn" data-user="jondumen">
+                Discord <i class="fa-brands fa-discord"></i>
+            </button>
+
+            <a href="https://www.instagram.com/jondumen10" target="_blank" class="link-btn">
+                Instagram <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@jondumen" target="_blank" class="link-btn">
+                TikTok <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a href="https://twitter.com/jondumen" target="_blank" class="link-btn">
+                Twitter / X <i class="fa-brands fa-twitter"></i>
+            </a>
+
+            <a href="https://www.twitch.tv/jondumen" target="_blank" class="link-btn">
+                Twitch <i class="fa-brands fa-twitch"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@jondumen" target="_blank" class="link-btn">
+                YouTube <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="URL_DE_TU_PROYECTO_DESPLEGADO" target="_blank" class="link-btn proyecto-destacado">
+                Último Proyecto (En Desarrollo) <i class="fa-solid fa-code-branch"></i>
+            </a>
+        </main>
+        
+        <footer class="social-icons">
+            <a href="https://wa.me/+526145097643" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://t.me/jondumen" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+            <a href="mailto:jondumen@gmail.com" title="Correo Electrónico"><i class="fa-solid fa-envelope"></i></a>
+        </footer>
+    </div> <div id="cv-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Selecciona el Idioma del CV</h2>
+            <p>Elige la versión que deseas visualizar o descargar:</p>
+            
+            <div class="modal-options">
+                <a href="docs/CV-ES-jondumen.pdf" target="_blank" class="modal-btn">
+                    Español <i class="fa-solid fa-language"></i>
+                </a>
+                <a href="docs/CV-EN-jondumen.pdf" target="_blank" class="modal-btn">
+                    English <i class="fa-solid fa-globe"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

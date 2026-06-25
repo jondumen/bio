@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at 80% 20%, #112229 0%, #070a13 60%);
+    color: #e2e8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    overflow-y: auto;   /* <--- Permite scroll vertical solo si es necesario */
+    position: relative;
+}
+
+#neon-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Se va al fondo de todo */
+    pointer-events: none; /* Hace que ignores los clics en el fondo */
+}
+
+/* Contenedor del marco tipo Glass */
+.container {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    padding: 50px 40px;
+    
+    /* Efecto Cristal (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.015);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    
+    /* Animación de entrada */
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.fade-in {
+    animation: fadeInReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    /* Borde cian Miku con transparencia */
+    border: 3px solid rgba(100, 255, 218, 0.6); 
+    object-fit: cover;
+    margin-bottom: 25px;
+    /* GLOW: Brillo neón alrededor del avatar */
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.4), 
+                inset 0 0 10px rgba(100, 255, 218, 0.2);
+}
+
+/* TEXTOS */
+.profile h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.profile .tagline {
+    font-size: 0.95rem;
+    color: #64748b; 
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+/* BOTONES (LINKS) */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 45px;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 18px 24px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(100, 255, 218, 0.25); 
+    color: #cbd5e1;
+    text-decoration: none;
+    border-radius: 8px; 
+    font-size: 1.05rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+
+/* El icono va hacia la derecha */
+.link-btn i {
+    font-size: 1.2rem;
+    color: rgba(100, 255, 218, 0.7);
+    order: 2; /* Mueve el icono al final */
+}
+
+/* GLOW EN HOVER */
+.link-btn:hover {
+    color: #ffffff;
+    border-color: rgba(100, 255, 218, 0.9);
+    background: rgba(100, 255, 218, 0.03);
+    /* Brillo exterior intenso */
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.3), 
+                inset 0 0 10px rgba(100, 255, 218, 0.1);
+    transform: translateY(-1px);
+}
+
+/* REDES SOCIALES (FOOTER) */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); 
+    padding-top: 25px;
+}
+
+.social-icons a {
+    color: rgba(100, 255, 218, 0.5); 
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: rgba(100, 255, 218, 1);
+    transform: translateY(-2px);
+    /* Destello de texto para los iconos inferiores */
+    filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.6));
+}
+
+/* Estilo especial para resaltar tu último proyecto */
+.link-btn.proyecto-destacado {
+    border-color: rgba(100, 255, 218, 0.6);
+    background: rgba(100, 255, 218, 0.03);
+}
+
+.link-btn.proyecto-destacado:hover {
+    background: rgba(100, 255, 218, 0.08);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
+}
+
+
+/* --- ESTILOS DEL POP-UP (MODAL) --- */
+
+/* Fondo oscuro que cubre toda la pantalla al abrirse */
+.modal {
+    position: fixed; 
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;    
+    height: 100%;   
+    background-color: rgba(7, 10, 19, 0.85); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* Forzamos el centrado mediante Flexbox */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+    display: none; /* Se oculta por defecto */
+}
+
+/* Aseguramos que la tarjeta de adentro no se desplace */
+.modal-content {
+    background: rgba(20, 32, 45, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    border-radius: 12px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    
+    /* Forzamos a que la tarjeta se alinee al centro de su contenedor fixed */
+    margin: auto; 
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.2);
+    
+    animation: modalReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalReveal {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #64748b;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: rgba(100, 255, 218, 1);
+}
+
+.modal-content h2 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.modal-content p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+/* Contenedor de las dos opciones (Español / Inglés) */
+.modal-options {
+    display: flex;
+    gap: 15px;
+}
+
+.modal-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.modal-btn:hover {
+    color: #ffffff;
+    border-color: rgba(100, 255, 218, 0.8);
+    background: rgba(100, 255, 218, 0.05);
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+}
